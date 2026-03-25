@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Country Detector</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Phone Country Detector</h1>
+    <input type="text" id="phoneNumber" placeholder="+234xxxxxxx">
+    <div id="result"></div>
+
+    <script>
+        const input = document.getElementById("phoneNumber");
+        const result = document.getElementById("result");
+
+        input.addEventListener("input", function () {
+            const number = input.value.trim();
+            const prefix = number.slice(0, 4); 
+
+            if (prefix === "+234") {
+                result.textContent = "Nigeria";
+            } else if (prefix === "+233") {
+                result.textContent = "Ghana";
+            } else if (prefix === "+254") {
+                result.textContent = "Kenya";
+            } else if (prefix === "+256") {
+                result.textContent = "Uganda";
+            } else if (prefix === "+255") {
+                result.textContent = "Tanzania";
+            } else if (prefix === "+251") {
+                result.textContent = "Ethiopia";
+            } else if (prefix === "+237") {
+                result.textContent = "Cameroon";
+            } else if (number.slice(0, 3) === "+27") {
+                result.textContent = "South Africa";
+            } else if (number.slice(0, 3) === "+44") {
+                result.textContent = "United Kingdom";
+            } else if (number.slice(0, 3) === "+91") {
+                result.textContent = "India";
+            } else if (number.slice(0, 3) === "+86") {
+                result.textContent = "China";
+            } else if (number.slice(0, 3) === "+33") {
+                result.textContent = "France";
+            } else if (number.slice(0, 3) === "+49") {
+                result.textContent = "Germany";
+            } else if (number.slice(0, 3) === "+55") {
+                result.textContent = "Brazil";
+            } else if (number.slice(0, 2) === "+1") {
+                result.textContent = "United States / Canada";
+            } else {
+                result.textContent = "Unknown country";
+            }
+        });
+    </script>
+</body>
+</html>
